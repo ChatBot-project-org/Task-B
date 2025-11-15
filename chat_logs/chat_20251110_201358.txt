@@ -1,0 +1,16 @@
+Chat transcript started
+[2025-11-10T20:14:13] User: :stats
+[2025-11-10T20:14:13] Bot: AIML: active
+KB size: 94
+Similarity threshold: 0.35
+Debug: off
+[2025-11-10T20:14:24] User: :debug on
+[2025-11-10T20:14:24] Bot: Debug mode set to on
+[2025-11-10T20:14:50] User: what is recycling
+[2025-11-10T20:14:50] Bot: Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash and turning them into new products.
+[2025-11-10T20:14:54] User: what is recycling?
+[2025-11-10T20:14:54] Bot: Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash and turning them into new products.
+[2025-11-10T20:14:59] User: what is recyclin
+[2025-11-10T20:14:59] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2025-11-10T20:15:17] User: glass
+[2025-11-10T20:15:17] Bot: Many programs accept glass bottles/jars. Rinse and remove food residue; check lid rules locally.

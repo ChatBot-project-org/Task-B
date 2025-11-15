@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+  <!-- =======================================================
+       Identity & Conversation Setup
+       ======================================================= -->
+  <category>
+    <pattern>START</pattern>
+    <template>
+      <think><set name="domain">RECYCLING</set></think>
+      Hello! I’m your Recycling Assistant. Ask me about what to recycle, contamination, plastics, glass, composting, e-waste, and more.
+    </template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>I am your Recycling Assistant chatbot.</template>
+  </category>
+
+  <category>
+    <pattern>WHO ARE YOU</pattern>
+    <template><srai>WHAT IS YOUR NAME</srai></template>
+  </category>
+
+  <!-- Greetings (SRAI aliasing) -->
+  <category>
+    <pattern>HELLO</pattern>
+    <template>Hello! How can I help with recycling today?</template>
+  </category>
+  <category><pattern>HI</pattern><template><srai>HELLO</srai></template></category>
+  <category><pattern>HEY</pattern><template><srai>HELLO</srai></template></category>
+  <category><pattern>GOOD MORNING</pattern><template><srai>HELLO</srai></template></category>
+  <category><pattern>GOOD AFTERNOON</pattern><template><srai>HELLO</srai></template></category>
+  <category><pattern>GOOD EVENING</pattern><template><srai>HELLO</srai></template></category>
+
+  <!-- Farewells -->
+  <category>
+    <pattern>GOODBYE</pattern>
+    <template>Goodbye! Recycle right: keep items empty, clean, and dry.</template>
+  </category>
+  <category><pattern>BYE</pattern><template><srai>GOODBYE</srai></template></category>
+  <category><pattern>SEE YOU</pattern><template><srai>GOODBYE</srai></template></category>
+
+  <!-- Help / Capabilities -->
+  <category>
+    <pattern>HELP</pattern>
+    <template>
+      I answer recycling questions using rules and a Q/A knowledge base.
+      Try examples like: WHAT IS RECYCLING, WHAT GOES IN THE BIN, CONTAMINATION, PLASTICS NUMBERS, E WASTE, COMPOSTING.
+      Tip: for quick summaries, type: wiki &lt;topic&gt;. For general questions, just ask in your own words.
+    </template>
+  </category>
+  <category>
+    <pattern>WHAT CAN YOU DO</pattern>
+    <template>
+      I handle recycling FAQs with AIML. If I don’t have an exact pattern, I’ll search a Q/A knowledge base using similarity to find the best answer.
+    </template>
+  </category>
+
+  <!-- Debug / Hints (optional phrases users may try) -->
+  <category>
+    <pattern>COMMANDS</pattern>
+    <template>Use :help :stats :reload :debug on/off in the console. Ask me normal recycling questions here.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Recycling Basics
+       ======================================================= -->
+  <category>
+    <pattern>WHAT IS RECYCLING</pattern>
+    <template>Recycling means collecting and processing materials that would be trash and turning them into new products.</template>
+  </category>
+
+  <category>
+    <pattern>WHY IS RECYCLING IMPORTANT</pattern>
+    <template>It conserves resources and energy, reduces pollution and landfill use, and supports a circular economy.</template>
+  </category>
+
+  <category>
+    <pattern>DOES RECYCLING SAVE ENERGY</pattern>
+    <template>Yes. Making products from recycled materials generally uses less energy than using raw materials.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT ARE THE BENEFITS OF RECYCLING</pattern>
+    <template>Conserves resources, saves energy, supports jobs, reduces greenhouse gases, and cuts waste disposal.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS THE WASTE HIERARCHY</pattern>
+    <template>From best to worst: prevent waste, reuse, recycle/compost, recover energy, and dispose.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT IS CONTAMINATION</pattern>
+    <template>Contamination is when non-accepted or dirty items go in the recycling bin, lowering quality or ruining whole loads.</template>
+  </category>
+
+  <category>
+    <pattern>HOW TO RECYCLE RIGHT</pattern>
+    <template>Keep items empty, clean, and dry; only put accepted materials in the bin; don’t bag recyclables unless your program says so.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Plastics
+       ======================================================= -->
+  <category>
+    <pattern>WHAT PLASTICS ARE ACCEPTED</pattern>
+    <template>Many places accept #1 (PET) and #2 (HDPE) bottles and jugs; some accept tubs. Always check local rules.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT DO THE NUMBERS ON PLASTIC MEAN</pattern>
+    <template>They indicate resin type (1–7), not universal recyclability. Acceptance varies by city and facility.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE PLASTIC CAPS</pattern>
+    <template>Often yes—leave caps on empty, rinsed bottles if allowed locally. Always follow local guidance.</template>
+  </category>
+
+  <category>
+    <pattern>ARE COMPOSTABLE PLASTICS RECYCLABLE</pattern>
+    <template>No. Compostable plastics are designed for composting facilities, not for standard recycling streams.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE PLASTIC BAGS</pattern>
+    <template>Generally not curbside; they jam equipment. Use retail drop-off points if available.</template>
+  </category>
+
+  <category>
+    <pattern>ARE BLACK PLASTIC TRAYS RECYCLABLE</pattern>
+    <template>Often not—optical sorters may miss black plastic. Check your local program.</template>
+  </category>
+
+  <category>
+    <pattern>SHOULD I CRUSH PLASTIC BOTTLES</pattern>
+    <template>Only if your program asks for it. Some sorting systems rely on container shape.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE STYROFOAM</pattern>
+    <template>Most curbside programs don’t accept foam foodware/packaging. Look for specialty drop-off options.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Paper & Cardboard
+       ======================================================= -->
+  <category>
+    <pattern>WHAT PAPER IS RECYCLABLE</pattern>
+    <template>Office paper, newspapers, magazines, and paper mail are commonly accepted if clean and dry.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE SHREDDED PAPER</pattern>
+    <template>Many curbside programs don’t accept loose shreds. Check if bagged shreds are allowed at drop-offs.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE PIZZA BOXES</pattern>
+    <template>Yes if free of heavy grease/food. Oil-soaked parts should be composted or trashed.</template>
+  </category>
+
+  <category>
+    <pattern>IS GIFT WRAP RECYCLABLE</pattern>
+    <template>Foil/glitter wrap is usually not recyclable. Plain paper wrap may be accepted; tissue paper often isn’t.</template>
+  </category>
+
+  <category>
+    <pattern>DO I REMOVE TAPE FROM BOXES</pattern>
+    <template>Remove what’s practical, flatten boxes, and keep them dry.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Glass
+       ======================================================= -->
+  <category>
+    <pattern>IS GLASS RECYCLABLE</pattern>
+    <template>Many programs accept glass bottles and jars. Rinse them; follow local lid rules.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE BROKEN GLASS</pattern>
+    <template>Often no—broken glass is a hazard and may be rejected. Check local guidance.</template>
+  </category>
+
+  <category>
+    <pattern>SEPARATE GLASS BY COLOR</pattern>
+    <template>Some places accept mixed glass; others require color separation. Follow local instructions.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Metals & Cartons
+       ======================================================= -->
+  <category>
+    <pattern>CAN I RECYCLE ALUMINUM CANS</pattern>
+    <template>Yes—aluminum cans are widely accepted and infinitely recyclable.</template>
+  </category>
+
+  <category>
+    <pattern>IS ALUMINUM FOIL RECYCLABLE</pattern>
+    <template>Only if clean and accepted locally. Food-soiled foil is contamination.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE TIN CANS</pattern>
+    <template>Yes—rinse steel/tin cans; place lids inside cans for safety if advised.</template>
+  </category>
+
+  <category>
+    <pattern>ARE CARTONS RECYCLABLE</pattern>
+    <template>Many communities accept shelf-stable and refrigerated cartons. Verify locally and follow cap instructions.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: Organics / Composting
+       ======================================================= -->
+  <category>
+    <pattern>WHAT IS COMPOSTING</pattern>
+    <template>It’s aerobic decomposition of organics (food scraps, yard trimmings) into nutrient-rich compost.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT CAN I COMPOST</pattern>
+    <template>Greens (fruit/veg scraps) and browns (dry leaves/cardboard). Avoid meat, dairy, and oily foods in basic home systems.</template>
+  </category>
+
+  <category>
+    <pattern>HOME COMPOST BALANCE</pattern>
+    <template>Use roughly equal greens/browns by volume and keep moisture like a wrung-out sponge.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I COMPOST COMPOSTABLE PLASTIC</pattern>
+    <template>Most require industrial composting and should not go in home compost bins unless labeled for it.</template>
+  </category>
+
+  <!-- =======================================================
+       Domain: E-waste & Special Items
+       ======================================================= -->
+  <category>
+    <pattern>HOW TO RECYCLE ELECTRONICS</pattern>
+    <template>Don’t put e-waste in curbside bins. Use manufacturer or retailer take-back or authorized collection events.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE BATTERIES</pattern>
+    <template>No curbside. Use dedicated battery collection points or retailer programs.</template>
+  </category>
+
+  <category>
+    <pattern>HOUSEHOLD HAZARDOUS WASTE</pattern>
+    <template>Items like paints, solvents, and pesticides go to HHW programs, not curbside recycling.</template>
+  </category>
+
+  <category>
+    <pattern>ARE AEROSOL CANS RECYCLABLE</pattern>
+    <template>If completely empty, many programs accept them—don’t pierce; check local rules.</template>
+  </category>
+
+  <category>
+    <pattern>CAN I RECYCLE TEXTILES</pattern>
+    <template>Yes via donation or textile recyclers if clean and dry. Don’t place textiles in curbside recycling.</template>
+  </category>
+
+  <!-- =======================================================
+       Preparation & Best Practices
+       ======================================================= -->
+  <category>
+    <pattern>DO ITEMS NEED TO BE CLEAN</pattern>
+    <template>No, not spotless—just empty and free of significant residue; quick rinsing helps.</template>
+  </category>
+
+  <category>
+    <pattern>SHOULD LIDS BE ON OR OFF</pattern>
+    <template>Follow local guidance. Caps often stay on plastic bottles; metal lids may go inside cans.</template>
+  </category>
+
+  <category>
+    <pattern>HOW DRY SHOULD RECYCLABLES BE</pattern>
+    <template>Keep them dry; moisture damages paper and lowers material quality.</template>
+  </category>
+
+  <category>
+    <pattern>ARE TINY ITEMS RECYCLABLE</pattern>
+    <template>Very small items often fall through sorting equipment and aren’t captured—avoid placing them in the bin.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT ABOUT TANGLERS</pattern>
+    <template>Don’t put hoses, cords, or wires in the bin—they tangle and jam sorting machines.</template>
+  </category>
+
+  <category>
+    <pattern>TAKEAWAY COFFEE CUPS</pattern>
+    <template>Acceptance varies. Paper cups may be lined with plastic. Lids/sleeves might be recyclable separately.</template>
+  </category>
+
+  <!-- =======================================================
+       Local Rules Reminder
+       ======================================================= -->
+  <category>
+    <pattern>WHY DO RULES VARY</pattern>
+    <template>Programs and facilities differ by region, so accepted materials and preparation rules vary. Always check local guidance.</template>
+  </category>
+
+  <category>
+    <pattern>WHAT DOES MY CITY ACCEPT</pattern>
+    <template>Please check your local recycling program or hauler’s website for the accepted list and how to prepare items.</template>
+  </category>
+
+  <!-- =======================================================
+       Wildcards: steer to Wikipedia or fallback
+       ======================================================= -->
+  <category>
+    <pattern>TELL ME ABOUT *</pattern>
+    <template>Try: wiki <star/> — I can fetch a short summary for you.</template>
+  </category>
+
+  <category>
+    <pattern>EXPLAIN *</pattern>
+    <template>You can ask a direct recycling question, or try: wiki <star/> for a quick summary.</template>
+  </category>
+
+  <!-- =======================================================
+       Context (THAT): mini dialog
+       ======================================================= -->
+  <category>
+    <pattern>ARE YOU A CHATBOT</pattern>
+    <template>Yes. Do you want tips to recycle right?</template>
+  </category>
+  <category>
+    <pattern>YES</pattern>
+    <that>Yes. Do you want tips to recycle right?</that>
+    <template>
+      <random>
+        <li>Keep items empty, clean, and dry.</li>
+        <li>Only put accepted materials in the bin.</li>
+        <li>Don’t bag recyclables unless instructed locally.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>NO</pattern>
+    <that>Yes. Do you want tips to recycle right?</that>
+    <template>No problem—ask me anything else about recycling.</template>
+  </category>
+
+  <!-- =======================================================
+       Variety with RANDOM
+       ======================================================= -->
+  <category>
+    <pattern>GIVE ME A RECYCLING TIP</pattern>
+    <template>
+      <random>
+        <li>Flatten cardboard to save space and ensure pickup.</li>
+        <li>Rinse food residue to avoid contamination.</li>
+        <li>Check local rules for plastics #1 and #2; others vary.</li>
+        <li>Keep tanglers (hoses, cords) out of the bin.</li>
+        <li>When unsure, check your city’s accepted list.</li>
+      </random>
+    </template>
+  </category>
+
+  <!-- =======================================================
+       Fallback nudge: when user says something broad
+       ======================================================= -->
+  <category>
+    <pattern>WHAT SHOULD I DO</pattern>
+    <template>Tell me what material or item you’re unsure about (e.g., PLASTIC CAPS, GLASS, PIZZA BOXES), or try: wiki recycling.</template>
+  </category>
+
+  <!-- Common aliases routed via SRAI -->
+  <category><pattern>WHAT IS THE POINT OF RECYCLING</pattern><template><srai>WHY IS RECYCLING IMPORTANT</srai></template></category>
+  <category><pattern>WHY RECYCLE</pattern><template><srai>WHY IS RECYCLING IMPORTANT</srai></template></category>
+  <category><pattern>WHAT GOES IN THE BIN</pattern><template><srai>HOW TO RECYCLE RIGHT</srai></template></category>
+  <category><pattern>HOW TO RECYCLE</pattern><template><srai>HOW TO RECYCLE RIGHT</srai></template></category>
+  <category><pattern>PLASTIC NUMBERS</pattern><template><srai>WHAT DO THE NUMBERS ON PLASTIC MEAN</srai></template></category>
+  <category><pattern>RECYCLING CAPS</pattern><template><srai>CAN I RECYCLE PLASTIC CAPS</srai></template></category>
+  <category><pattern>RECYCLING BAGS</pattern><template><srai>CAN I RECYCLE PLASTIC BAGS</srai></template></category>
+  <category><pattern>RECYCLE FOAM</pattern><template><srai>CAN I RECYCLE STYROFOAM</srai></template></category>
+  <category><pattern>CLOTHES RECYCLING</pattern><template><srai>CAN I RECYCLE TEXTILES</srai></template></category>
+  <category><pattern>E WASTE</pattern><template><srai>HOW TO RECYCLE ELECTRONICS</srai></template></category>
+
+</aiml>

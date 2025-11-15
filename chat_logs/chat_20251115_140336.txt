@@ -1,0 +1,32 @@
+Chat transcript started
+[2025-11-15T14:04:17] User: :kb
+[2025-11-15T14:04:17] Bot: KB:
+all x.(Plastic(x) -> Recyclable(x))
+all x.(GlassBottle(x) -> Glass(x))
+all x.(AluminumCan(x) -> Aluminum(x))
+all x.(Aluminum(x) -> Recyclable(x))
+all x.(Paper(x) -> Recyclable(x))
+all x.(Foam(x) -> NotAccepted(x))
+all x.(Battery(x) -> Hazardous(x))
+all x.(Hazardous(x) -> NotAccepted(x))
+all x.(CompostablePlastic(x) -> NotRecyclable(x))
+all x.(Textile(x) -> NotAccepted(x))
+Plastic(Bottle)
+GlassBottle(Jar)
+AluminumCan(Can)
+[2025-11-15T14:04:28] User: I know that Bottle is plastic.
+[2025-11-15T14:04:29] Bot: Noted.
+[2025-11-15T14:04:48] User: Check that Bottle is recyclable.
+[2025-11-15T14:04:48] Bot: Correct.
+[2025-11-15T14:04:57] User: Check that glass is recyclable.
+[2025-11-15T14:04:57] Bot: I don't know.
+[2025-11-15T14:05:07] User: I know that glass is plastic.
+[2025-11-15T14:05:07] Bot: Noted.
+[2025-11-15T14:05:19] User: I know that bottle is glass.
+[2025-11-15T14:05:20] Bot: Noted.
+[2025-11-15T14:05:24] User: Check that Bottle is recyclable.
+[2025-11-15T14:05:24] Bot: Correct.
+[2025-11-15T14:05:36] User: I know that Bottle is not plastic.
+[2025-11-15T14:05:36] Bot: This would contradict what I already know. I did not add it.
+[2025-11-15T14:05:41] User: I know that Bottle is not plastic.
+[2025-11-15T14:05:41] Bot: This would contradict what I already know. I did not add it.

@@ -1,0 +1,11 @@
+Chat transcript started
+[2025-11-10T19:53:39] User: what is backpropagation
+[2025-11-10T19:53:39] Bot: Backpropagation efficiently computes gradients in neural networks via the chain rule.
+[2025-11-10T19:53:52] User: who is Dasun
+[2025-11-10T19:53:52] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2025-11-10T19:54:21] User: clear
+[2025-11-10T19:54:21] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2025-11-10T19:54:25] User: quit
+[2025-11-10T19:54:25] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2025-11-10T19:54:30] User: :quit
+[2025-11-10T19:54:30] Bot: Goodbye!

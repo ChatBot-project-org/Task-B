@@ -1,0 +1,5 @@
+Chat transcript started
+[2025-11-10T19:57:17] User: what is backpropagation
+[2025-11-10T19:57:17] Bot: Backpropagation efficiently computes gradients in neural networks via the chain rule.
+[2025-11-10T19:57:20] User: :quit
+[2025-11-10T19:57:20] Bot: Goodbye!
