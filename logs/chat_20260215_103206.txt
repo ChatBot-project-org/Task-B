@@ -1,0 +1,29 @@
+Chat transcript started
+[2026-02-15T10:45:11] User: I know that Bottle is plastic
+[2026-02-15T10:45:11] Bot: I already know that Bottle is plastic.
+[2026-02-15T10:45:51] User: I know that Box is plastic
+[2026-02-15T10:45:51] Bot: OK, I will remember that Box is plastic.
+[2026-02-15T10:45:58] User: I know that Bottle is not plastic
+[2026-02-15T10:45:58] Bot: Sorry this contradicts with what I know!
+[2026-02-15T10:46:04] User: I know that Box is not plastic
+[2026-02-15T10:46:04] Bot: Sorry this contradicts with what I know!
+[2026-02-15T10:46:32] User: Check that Box is recyclable
+[2026-02-15T10:46:32] Bot: Correct.
+[2026-02-15T10:46:40] User: Check that Can is recyclable
+[2026-02-15T10:46:40] Bot: Correct.
+[2026-02-15T10:46:48] User: I know that Can is metal
+[2026-02-15T10:46:48] Bot: OK, I will remember that Can is metal.
+[2026-02-15T10:46:53] User: OK, I will remember that Can is metal.
+[2026-02-15T10:46:53] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2026-02-15T10:46:58] User: OK, I will remember that Can is metal.
+[2026-02-15T10:46:58] Bot: I'm not sure about that. Could you rephrase or ask something else?
+[2026-02-15T10:47:07] User: Check that Can is recyclable
+[2026-02-15T10:47:07] Bot: Correct.
+[2026-02-15T10:47:12] User: I know that BananaPeel is not recyclable
+[2026-02-15T10:47:12] Bot: OK, I will remember that BananaPeel is not recyclable.
+[2026-02-15T10:47:16] User: Check that BananaPeel is recyclable
+[2026-02-15T10:47:16] Bot: Incorrect.
+[2026-02-15T10:47:25] User: Check that RandomThing is recyclable
+[2026-02-15T10:47:25] Bot: I don't know.
+[2026-02-15T10:47:55] User: :quit
+[2026-02-15T10:47:55] Bot: Goodbye!
