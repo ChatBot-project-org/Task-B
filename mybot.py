@@ -14,6 +14,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from rapidfuzz import process, fuzz
 
 from logic_engine import LogicEngine
+from fuzzy_logic import FuzzyLogicEngine
 
 AIML_FILE = "mybot.aiml"
 KB_FILE = "qa_kb.csv"
@@ -22,6 +23,7 @@ SIM_THRESHOLD = 0.35
 LOG_DIR = "logs"
 DEBUG = False
 SPELL_FIX_ENABLED = True
+fuzzy_engine = FuzzyLogicEngine()
 
 
 def banner():
@@ -138,7 +140,7 @@ def load_fol_seed() -> List[str]:
 
 
 def main():
-    global DEBUG, SPELL_FIX_ENABLED
+    global DEBUG, SPELL_FIX_ENABLED, fuzzy_engine
     kernel = load_aiml_kernel()
     questions, answers, vectorizer, q_mat = load_kb(KB_FILE)
     vocab = build_vocab(questions)
@@ -179,6 +181,9 @@ def main():
                 "  I know that <stmt>\n"
                 "  Check that <stmt>\n"
                 "Examples: I know that Bottle is plastic.  Check that Bottle is recyclable.\n"
+                "Fuzzy Logic:\n"
+                "  <stmt> is <val>% <stmt> (e.g. Cardboard is 80% recyclable)\n"
+                "  Check certainty that <stmt> is <stmt>\n"
                 "Commands: :help  :reload  :stats  :debug on/off  :spell on/off  :dict  :kb  :quit\n"
                 "Wikipedia: wiki <topic>"
             )
@@ -192,6 +197,7 @@ def main():
             vocab = build_vocab(questions)
 
             logic = LogicEngine()
+            fuzzy_engine = FuzzyLogicEngine()
             try:
                 logic.seed(load_fol_seed())
             except ValueError as ex:
@@ -213,7 +219,8 @@ def main():
                 f"Similarity threshold: {SIM_THRESHOLD}\n"
                 f"Debug: {'on' if DEBUG else 'off'}\n"
                 f"Spell-fix: {'on' if SPELL_FIX_ENABLED else 'off'}\n"
-                f"FOL clauses: {len(logic.show())}"
+                f"FOL clauses: {len(logic.show())}\n"
+                f"Fuzzy KB facts: {len(fuzzy_engine.fuzzy_kb)}"
             )
             print("Bot:", bot)
             append_log(log_path, "Bot", bot)
@@ -271,9 +278,22 @@ def main():
             continue
 
         m_check = re.match(r"^\s*check\s+that\s+(.+)$", user, flags=re.I)
-        if m_check:
+        if m_check and not user.lower().startswith("check certainty that"):
             stmt = m_check.group(1).strip()
             bot = logic.check_sentence(stmt)
+            print("Bot:", bot)
+            append_log(log_path, "Bot", bot)
+            continue
+
+        if re.search(r"\bis\s+(\d+(\.\d+)?%|0\.\d+|1\.0)", user, flags=re.I):
+            bot = fuzzy_engine.add_fuzzy_fact(user)
+            print("Bot:", bot)
+            append_log(log_path, "Bot", bot)
+            continue
+            
+        m_fuzzy_check = re.match(r"^\s*check\s+certainty\s+that\s+(.+)$", user, flags=re.I)
+        if m_fuzzy_check:
+            bot = fuzzy_engine.check_fuzzy_fact(user)
             print("Bot:", bot)
             append_log(log_path, "Bot", bot)
             continue

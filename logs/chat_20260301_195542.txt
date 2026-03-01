@@ -1,0 +1,7 @@
+Chat transcript started
+[2026-03-01T19:55:42] User: Plastic bottle is 85% recyclable
+[2026-03-01T19:55:42] Bot: Fuzzy KB updated: Certainty(Plastic bottle is recyclable) = 0.85.
+[2026-03-01T19:55:42] User: Check certainty that plastic bottle is recyclable
+[2026-03-01T19:55:42] Bot: I am 85% sure that plastic bottle is recyclable. This is Highly Likely.
+[2026-03-01T19:55:42] User: :quit
+[2026-03-01T19:55:42] Bot: Goodbye!

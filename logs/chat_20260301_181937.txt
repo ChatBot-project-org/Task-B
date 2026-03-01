@@ -1,0 +1,3 @@
+Chat transcript started
+[2026-03-01T18:20:01] User: Plastic bottle is 85% recyclable
+[2026-03-01T18:20:01] Bot: I'm not sure about that. Could you rephrase or ask something else?
